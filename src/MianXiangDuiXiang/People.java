@@ -27,6 +27,6 @@ public class People {
         this.name = name;
     }
     public void tostring(){
-        System.out.print("Your name is "+name+" and age is "+age+" years old");
+        System.out.print("Your name is "+name+" and age is "+age+" years old.");
     }
 }
