@@ -6,7 +6,7 @@ public class InnerclassExercise01 {
         f1(new AA() {
             @Override
             public void show() {
-                System.out.println("这是一个名画");
+                System.out.println("这是一个名画.");
             }
         });
     }
