@@ -1,4 +1,4 @@
-package MianXiangDuiXiang.innerClass;
+package MianXiangDuiXiang.innerClass.anonymousInnerClass;
 
 public class AnonymousInnerClassDetail {
     public static void main(String[] args) {
