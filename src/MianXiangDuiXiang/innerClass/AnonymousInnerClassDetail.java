@@ -24,9 +24,6 @@ class Outer05{
             }
         };
         p.hi();
-        System.out.println();
-        p.hi();
-
 //        new Person(){
 //            @Override
 //            public void hi() {

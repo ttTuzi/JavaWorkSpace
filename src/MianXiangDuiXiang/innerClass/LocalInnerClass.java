@@ -6,12 +6,22 @@ public class LocalInnerClass {
      */
     public static void main(String[] args) {
         Outer02 outer02 = new Outer02();
+        outer02.setN1(100);
         outer02.m1();
     }
 }
 
 class Outer02{//外部类
-    private int n1 =100;
+    private int n1 ;
+
+    public int getN1() {
+        return n1;
+    }
+
+    public void setN1(int n1) {
+        this.n1 = n1;
+    }
+
     private void m2(){
         System.out.println("outer02 m2()");
     }
@@ -24,6 +34,7 @@ class Outer02{//外部类
             //2.可以访问外部类的所以成员包括私有的
             private int n1 =200;
             public void f1(){
+                //Outer05.this.n1指的是创建这个类的时候的n1
                 System.out.println("内部类的n1="+n1+", 外部类的n1="+Outer02.this.n1);
                 m2();
             }
