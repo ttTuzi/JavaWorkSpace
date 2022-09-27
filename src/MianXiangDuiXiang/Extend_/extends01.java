@@ -10,7 +10,7 @@ public class extends01 {
 
         graduate.Name="大魏";
         graduate.age=20;
-        graduate.setScore(98);
+        graduate.setScore(99);
 
         graduate.showInfo();
         pupil.showInfo();
