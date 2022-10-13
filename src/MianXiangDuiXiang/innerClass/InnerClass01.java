@@ -2,7 +2,7 @@ package MianXiangDuiXiang.innerClass;
 
 public class InnerClass01 {
     public static void main(String[] args) {
-
+        System.out.println("我");
     }
 }
 class Outer{
