@@ -19,7 +19,8 @@ enum Season02{
     //解读:常量名(实例列表)
     //3.如果有多个常量名(对象),使用 , 间隔即可
     //4.如果用enum实现,要求将定义的对象写在前面
-    SPRING("Spring","Warm"),WINTER("Summer","Hot");
+    SPRING("Spring","Warm"),SUMMER("Summer","Hot"),
+    FALL("Fall", "Cool"),WINTER("Winter", "Cold");
     private String name;
     private String desc;
     private Season02(String name, String desc) {
