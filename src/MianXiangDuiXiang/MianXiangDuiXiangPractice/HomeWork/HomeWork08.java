@@ -12,8 +12,29 @@ package MianXiangDuiXiang.MianXiangDuiXiangPractice.HomeWork;
 // 9.将枚举对象在switch语句中匹配使用
 public class HomeWork08 {
     public static void main(String[] args) {
+        Color color = Color.BLACK;
         Color.RED.show();
         Color.BLACK.show();
+        switch (color){
+            case RED:
+                System.out.println("匹配到红色");
+                break;
+            case BLUE:
+                System.out.println("匹配到蓝色");
+                break;
+            case BLACK:
+                System.out.println("匹配到黑色");
+                break;
+            case YELLOW:
+                System.out.println("匹配到黄色");
+                break;
+            case GREEN:
+                System.out.println("匹配到绿色");
+                break;
+            default:
+                System.out.println("没有匹配到");
+
+        }
     }
 }
 
