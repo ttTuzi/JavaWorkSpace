@@ -1,4 +1,4 @@
-package exception_;
+package exceptionAndTryCatchAndThrows.exception_;
 
 public class exception01 {
     public static void main(String[] args) {
