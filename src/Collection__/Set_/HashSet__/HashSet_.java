@@ -1,8 +1,7 @@
-package Collection__.Set_;
+package Collection__.Set_.HashSet__;
 
 
 import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @Description: TODO
