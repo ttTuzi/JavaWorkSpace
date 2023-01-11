@@ -1,17 +1,15 @@
 package netWork.socket;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * @Description:
+ * @Description: use byte
  * @author: Wei Liang
  * @date: 1/9/2023 11:34 PM
  */
-public class SocketTCP02Server {
+public class SocketTCP03Server {
     public static void main(String[] args) throws IOException {
                 //1.在本机的9999端口监听,等待链接
         //  细节: 要求在本机没有其他服务在监听9999
@@ -26,25 +24,23 @@ public class SocketTCP02Server {
         //
         //3.通过socket.getInputStream读取数据通道的数据
         InputStream inputStream = socket.getInputStream();
-        //4.IO读取
-        byte[] buf = new byte[1024];
-        int readLen = 0;
-        while((readLen= inputStream.read(buf))!=-1){
-            System.out.println(new String(buf,0,readLen));
-        }
-        //这里写不写都无所谓,因为我们已经读取到client的shutDownOutput的信息了
-        //所以在服务器端可以知道server的这段对话结束,所以可以开始发送信息
-        //而我们发送完这个信息之后client就直接关闭了,所以让不让client无所谓
-        //如果client还有回复,就必须加上shutdownInput()
-        socket.shutdownInput();
+        //4.IO读取,使用字符流
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        String s = bufferedReader.readLine();
+        System.out.println(s);
 
-        //5.
+
+
+        //5.获取socket相关的输出流
         OutputStream outputStream = socket.getOutputStream();
-        outputStream.write("hello, client".getBytes());
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
+        bufferedWriter.write("hello client 字符流");
+        bufferedWriter.newLine();
+        bufferedWriter.flush();
 
         //6.关闭流和socket
-        inputStream.close();
-        outputStream.close();
+        bufferedWriter.close();
+        bufferedReader.close();
         socket.close();
         serverSocket.close();
     }
