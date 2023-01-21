@@ -17,7 +17,7 @@ public class Cat {
     }
 
     public void hi(){
-        System.out.println(name + ": hi");
+        //System.out.println(name + ": hi");
     }
     public void cry(){
         System.out.println(name + ": cry");
