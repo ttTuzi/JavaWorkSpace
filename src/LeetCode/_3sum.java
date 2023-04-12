@@ -1,8 +1,6 @@
 package LeetCode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Description: TODO
@@ -13,20 +11,32 @@ public class _3sum {
     public static void main(String[] args) {
 
     }
-    public static List<List<Integer>> threeSum(Integer[] nums){
-        Arrays.sort(nums);
 
-        int i=0,j=1,k=2;
-        List<Integer> Is = new ArrayList<>();
-        List<List<Integer>> Os = new ArrayList<>();
-        while(nums[i]!=nums[j] && nums[i]!=nums[k] && nums[j]!=nums[k] ){
-            int sum = nums[i]+nums[j]+nums[k];
-            if(sum==0){
-                Is.add(nums[i]);
-                Is.add(nums[j]);
-                Is.add(nums[k]);
+    public static List<List<Integer>> threeSum(Integer[] nums) {
+        Arrays.sort(nums);
+        Set<List<Integer>> ans = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            int j = i + 1;
+            int k = nums.length - 1;
+            while (j < k) {
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum == 0) {
+                    List<Integer> list= new ArrayList<>();
+                    list.add(nums[i]);
+                    list.add(nums[j]);
+                    list.add(nums[k]);
+                    ans.add(list);
+                    j++;
+                    k--;
+                }else if(sum<0){
+                    j++;
+                }else {
+                    k--;
+                }
             }
         }
-        return null;
+        List<List<Integer>> output = new ArrayList<>();
+        output.addAll(ans);
+        return output;
     }
 }
