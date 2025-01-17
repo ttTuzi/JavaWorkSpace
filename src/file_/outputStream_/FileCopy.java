@@ -15,8 +15,8 @@ public class FileCopy {
         // copy e:\\Koala.jpg to c:\\
         //1.create inputStream  to read file
         //2.create outPutStream to write file
-        String fileName = "e:\\Koala.jpg";
-        String toFileName = "e:\\Koala2.jpg";
+        String fileName = "e:\\Kaola.jpg";
+        String toFileName = "e:\\Koala6.jpg";
         byte[] bytes = new byte[1024];
         int data = 0;
         FileInputStream fileInputStream = null;
